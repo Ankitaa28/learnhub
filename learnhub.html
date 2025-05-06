@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skillionaire LearnHub</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <!-- AOS CSS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header>
+    <nav class="bg-gray-900 text-white relative">
+        <div class="container mx-auto flex items-center justify-between px-4 py-4">
+          <!-- Logo -->
+          <div class="font-bold text-2xl tracking-tight">
+            Skillionaire <span class="text-yellow-400">LearnHub</span>
+          </div>
+      
+          <!-- Desktop Navigation Links -->
+          <ul class="hidden md:flex space-x-8 font-semibold">
+            <li><a href="#" class="hover:text-yellow-400 transition">Home</a></li>
+            <li><a href="#about" class="hover:text-yellow-400 transition">About</a></li>
+            <li><a href="#contact" class="hover:text-yellow-400 transition">Contact</a></li>
+          </ul>
+      
+          <!-- Login button to toggle form on desktop -->
+          <div class="hidden md:block relative">
+            <button id="login-toggle" class="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded hover:bg-yellow-300 transition">
+              Login
+            </button>
+      
+            <!-- Login form dropdown -->
+            <div id="login-form" class="absolute right-0 mt-2 w-64 bg-white rounded shadow-lg p-4 hidden z-50">
+              <form>
+                <input type="text" placeholder="Username" class="w-full mb-3 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <input type="password" placeholder="Password" class="w-full mb-3 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <button type="submit" class="w-full bg-yellow-400 text-gray-900 font-bold py-2 rounded hover:bg-yellow-300 transition">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+      
+          <!-- Mobile Hamburger Icon -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="focus:outline-none" aria-label="Open Menu">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+          <ul class="space-y-2 font-semibold">
+            <li><a href="#" class="block hover:text-yellow-400 transition">Home</a></li>
+            <li><a href="#about" class="block hover:text-yellow-400 transition">About</a></li>
+            <li><a href="#contact" class="block hover:text-yellow-400 transition">Contact</a></li>
+            <!-- Mobile login form always visible below links -->
+            <li>
+              <form class="mt-4 space-y-2 bg-gray-800 p-4 rounded">
+                <input type="text" placeholder="Username" class="w-full px-3 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <input type="password" placeholder="Password" class="w-full px-3 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <button type="submit" class="w-full bg-yellow-400 text-gray-900 font-semibold py-2 rounded hover:bg-yellow-300 transition">
+                  Login
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section
+    class="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-16 px-4"
+    data-aos="fade-down"
+    data-aos-duration="1200"
+  >
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+      Explore Skills. Unlock Opportunities.
+    </h1>
+    <p class="mb-8 text-lg md:text-xl">
+      Free curated content just for teens
+    </p>
+    <a href="#resources"
+      class="inline-block bg-yellow-400 text-gray-900 font-bold px-8 py-3 rounded-full shadow hover:bg-yellow-300 transition"
+    >
+      Start Learning
+    </a>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about" class="container mx-auto py-16 px-4 bg-white rounded-lg shadow-md max-w-4xl"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">About Skillionaire LearnHub</h2>
+    <p class="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+      Skillionaire LearnHub is a free resource hub dedicated to empowering teens with curated learning materials across various skills including coding, design, entrepreneurship, productivity, communication, and creativity. Our mission is to help young learners explore new skills, unlock opportunities, and build a strong foundation for their future success.
+    </p>
+  </section>
+
+  <!-- ==================== RESOURCE CARDS ==================== -->
+  <main>
+    <section id="resources" class="container mx-auto py-16 px-4">
+      <h2
+        class="text-2xl font-bold mb-8 text-center"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        Featured Resources
+      </h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Card 1 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition group"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+        >
+          <span class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Coding
+          </span>
+          <h3 class="text-lg font-bold mb-2 group-hover:text-blue-600 transition">
+            Intro to Python
+          </h3>
+          <p class="mb-4 text-sm">
+            Start coding with Python using this interactive beginner course.
+          </p>
+          <a href="https://www.learnpython.org/" target="_blank" class="text-blue-500 font-semibold hover:underline">
+            Visit
+          </a>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition group"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Design
+          </span>
+          <h3 class="text-lg font-bold mb-2 group-hover:text-green-600 transition">
+            Graphic Design Basics
+          </h3>
+          <p class="mb-4 text-sm">
+            Learn the fundamentals of design, color, and composition with Canva’s free tutorials.
+          </p>
+          <a href="https://www.canva.com/learn/design/" target="_blank" class="text-green-600 font-semibold hover:underline">
+            Visit
+          </a>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition group"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Entrepreneurship
+          </span>
+          <h3 class="text-lg font-bold mb-2 group-hover:text-purple-600 transition">
+            Teen Startup School
+          </h3>
+          <p class="mb-4 text-sm">
+            A step-by-step guide for teens to launch their first business idea.
+          </p>
+          <a href="https://www.teenstartupschool.com/" target="_blank" class="text-purple-600 font-semibold hover:underline">
+            Visit
+          </a>
+        </div>
+        <!-- Card 4 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition group"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
+          <span class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Productivity
+          </span>
+          <h3 class="text-lg font-bold mb-2 group-hover:text-yellow-600 transition">
+            Time Management for Teens
+          </h3>
+          <p class="mb-4 text-sm">
+            Master time management with free resources and planning tools.
+          </p>
+          <a href="https://www.mindtools.com/time-management" target="_blank" class="text-yellow-600 font-semibold hover:underline">
+            Visit
+          </a>
+        </div>
+        <!-- Card 5 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition group"
+          data-aos="zoom-in"
+          data-aos-delay="500"
+        >
+          <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Communication
+          </span>
+          <h3 class="text-lg font-bold mb-2 group-hover:text-red-600 transition">
+            Public Speaking 101
+          </h3>
+          <p class="mb-4 text-sm">
+            Boost your confidence and presentation skills with this free course.
+          </p>
+          <a href="https://www.toastmasters.org/find-a-club" target="_blank" class="text-red-600 font-semibold hover:underline">
+            Visit
+          </a>
+        </div>
+        <!-- Card 6 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition group"
+          data-aos="zoom-in"
+          data-aos-delay="600"
+        >
+          <span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Creativity
+          </span>
+          <h3 class="text-lg font-bold mb-2 group-hover:text-indigo-600 transition">
+            Creative Writing for Teens
+          </h3>
+          <p class="mb-4 text-sm">
+            Unlock your storytelling skills with prompts and writing challenges.
+          </p>
+          <a href="https://www.youngwriters.co.uk/" target="_blank" class="text-indigo-600 font-semibold hover:underline">
+            Visit
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="bg-white py-16 px-4">
+    <h2
+      class="text-2xl font-bold mb-8 text-center"
+      data-aos="fade-up"
+    >
+      Contact Us
+    </h2>
+    <form
+      class="max-w-xl mx-auto bg-gray-50 p-8 rounded-xl shadow space-y-6"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <input
+        type="text"
+        placeholder="Name"
+        class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+      >
+      <input
+        type="email"
+        placeholder="Email"
+        class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+      >
+      <textarea
+        placeholder="Message"
+        class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        rows="4"
+        required
+      ></textarea>
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white font-bold py-3 rounded hover:bg-blue-700 transition"
+      >
+        Send
+      </button>
+    </form>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-2 md:mb-0">
+        <a href="#" class="mx-2 hover:underline">Home</a>
+        <a href="#about" class="mx-2 hover:underline">About</a>
+        <a href="#contact" class="mx-2 hover:underline">Contact</a>
+        <a href="#" class="mx-2 hover:underline">Login</a>
+      </div>
+      <div class="text-sm">
+        &copy; 2025 Skillionaire LearnHub. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  <!-- AOS JS (Animate On Scroll) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false, // Animation triggers every time you scroll the element into view
+      duration: 800,
+    });
+    const loginToggleBtn = document.getElementById('login-toggle');
+  const loginForm = document.getElementById('login-form');
+
+  loginToggleBtn.addEventListener('click', () => {
+    loginForm.classList.toggle('hidden');
+  });
+
+  // Optional: Hide login form when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!loginForm.contains(e.target) && !loginToggleBtn.contains(e.target)) {
+      loginForm.classList.add('hidden');
+    }
+  });
+  </script>
+</body>
+</html>
